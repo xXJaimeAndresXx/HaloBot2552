@@ -7,7 +7,7 @@ Forreruner artifact in charge of the cinematographic analysis of the data collec
 
 ### Installation
 
-HaloBot requires [Python](https://www.python.org/)to run.
+HaloBot requires [Python](https://www.python.org/) to run.
 
 Install the packages.
 
