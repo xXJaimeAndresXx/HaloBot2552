@@ -3,9 +3,12 @@ from colorthief import ColorThief
 from PIL import Image, ImageDraw, ImageOps
 import cv2
 import numpy as np
-from frame import crear_frame
+from frame import crear_frame, trim
 
 crear_frame()
+im = Image.open("IMG/here.png")
+im = trim(im)
+im.save("IMG/here.png")
 OGimage="IMG/here.png"
 PILimage = Image.open(OGimage)
 width, height = PILimage.size
@@ -14,7 +17,7 @@ print("Border Widht: "+str(BRwidht))
 background=(255,255,255)
 
 
-
+#get the pallete of the frame
 color_thief = ColorThief(OGimage)
 color_palette=color_thief.get_palette(color_count=9)
 
@@ -25,6 +28,7 @@ draw = ImageDraw.Draw(color_palette_image)
 porc = width/9
 x0 = 0
 x1 = porc
+#Create the pallete
 for color in color_palette:
     draw.rectangle(((x0, 0), (x1, 600)), fill=color)
     x0 += porc
@@ -40,12 +44,13 @@ if isinstance(BRwidht,int) or isinstance(BRwidht,tuple):
     print("Success Expand")
 else:
     print("Invalid Integer") 
-
+#Save 2 files separately 
 BRimage.save("IMG/topBR.png")
 BRpallete.save("IMG/bottomBR.png")
 
 
 img1 = cv2.imread("IMG/topBR.png")
 img2 = cv2.imread("IMG/bottomBR.png")
+#Concatenate both of the images
 vis = np.concatenate((img1, img2), axis=0)
 cv2.imwrite('IMG/out.png', vis)
