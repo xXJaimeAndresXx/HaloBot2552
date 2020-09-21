@@ -22,6 +22,6 @@ $ pip install -r requirements.txt
 > Yo preguntaré y tu responderás...
 
 
-<img src="https://raw.githubusercontent.com/xXJaimeAndresXx/HaloBot2552/master/example.png?token=ALRMOY47N5VLFPCOVLSDSHK7LQQT4">
+![alt text](example.png)
 
 > New realese doesnt have black/white letterbox
