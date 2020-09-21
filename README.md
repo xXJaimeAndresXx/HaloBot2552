@@ -25,3 +25,8 @@ $ pip install -r requirements.txt
 ![alt text](example.png)
 
 > New realese doesnt have black/white letterbox
+
+## LORE GENERATOR
+Now the bot will generate random Lore Entries about Halo Universe.
+
+![alt text] (lore_generator.png)
