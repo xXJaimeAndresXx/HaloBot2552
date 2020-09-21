@@ -29,4 +29,4 @@ $ pip install -r requirements.txt
 ## LORE GENERATOR
 Now the bot will generate random Lore Entries about Halo Universe.
 
-![alt text] (lore_generator.png)
+![alt text](lore_generator.png)
