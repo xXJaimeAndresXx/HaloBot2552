@@ -1,6 +1,10 @@
 import requests
 from PIL import Image
 from io import BytesIO
+from googletrans import Translator, constants
+from pprint import pprint
+
+translator = Translator()
 
 def get_data(id):
     r2=requests.get("https://halo.fandom.com/api/v1/Articles/AsSimpleJson?id="+id)
@@ -63,7 +67,16 @@ try:
 except:
   print("Image: <---CORRUPTED DOMAIN CAN NOT RETRIEVE IMAGE DATA--->") 
 
-
+translation = translator.translate(title, dest="es")
+translation_main= translator.translate(main, dest="es")
+print("-----------------------------------------------------------------------------")
+print(f"{translation.text} ({translation.dest})")
+print(f"{translation_main.text} ({translation_main.dest})")
+try:
+  translation_history= translator.translate(history, dest="es")
+  print(f"{translation_history.text} ({translation_history.dest})")
+except:
+  pass
 
 
 #print(title)
